@@ -13,7 +13,7 @@ const SharedDashboard = () => {
           <div className="logo">
             <Link to="/" className="link">
               <h1>
-                <span>Tech</span>Trends
+                <span>Eric</span>Tech
               </h1>
             </Link>
           </div>
