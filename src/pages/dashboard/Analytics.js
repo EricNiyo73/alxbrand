@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Bar, Line } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+// import { Chart as ChartJS } from "chart.js/auto";
 import { AppContext } from "../../context/AppProvider";
 import { motion } from "framer-motion";
 
@@ -71,10 +71,10 @@ const Analytics = () => {
           <span className="number">13</span>
           <span>New letters</span>
         </div>
-        <div>
+        {/* <div>
           <span className="number">43</span>
           <span>All queries</span>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

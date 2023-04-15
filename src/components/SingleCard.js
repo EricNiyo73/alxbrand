@@ -4,7 +4,6 @@ import { MdDateRange } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const SingleCard = ({ data }) => {
-
   const { _id, title, date, description, comments } = data;
   return (
     <div className="card">
@@ -32,7 +31,7 @@ const SingleCard = ({ data }) => {
               </Link>
             </h3>
           </div>
-          <div className="description">{description.slice(0,100)+"..."}</div>
+          <div className="description">{description.slice(0, 100) + "..."}</div>
         </div>
       </div>
     </div>

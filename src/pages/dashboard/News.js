@@ -1,6 +1,6 @@
 import React from "react";
 
-const News = () => {
+const News = ({ data }) => {
   return (
     <div className="content">
       <div className="table">
@@ -20,7 +20,7 @@ const News = () => {
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{"karisimbitech@gmail.com"}</td>
+                  <td>{data?.email}</td>
                   <td className="actions">
                     <span
                       className="delete"
