@@ -1,6 +1,9 @@
 import React from "react";
+import { useContext } from "react";
 
-const News = ({ data }) => {
+import { AppContext } from "../../context/AppProvider";
+const News = () => {
+  const { letters } = useContext(AppContext);
   return (
     <div className="content">
       <div className="table">
@@ -15,12 +18,12 @@ const News = ({ data }) => {
           </thead>
           <tbody>
             {/* <tr> */}
-            {[1, 2, 4, 5, 6, 7].map((item, index) => {
-              // const { title, date, _id } = item;
+            {letters.map((item, index) => {
+              const { email } = item;
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
-                  <td>{data?.email}</td>
+                  <td>{email}</td>
                   <td className="actions">
                     <span
                       className="delete"

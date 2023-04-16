@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const [blogs, setBlogs] = useState([]);
   const [users, setUsers] = useState([]);
-  // const [letters, setLetters] = useState([]);
+  const [letters, setLetters] = useState([]);
 
   const fetchBlogs = async () => {
     try {
@@ -17,10 +17,11 @@ const AppProvider = ({ children }) => {
         },
       });
       const usersData = await axios.get("/users");
-      // const lettersData = await axios.get("/letters");
-      // console.log(lettersData);
+      const lettersData = await axios.get("/letters");
+      console.log(lettersData);
       setUsers(usersData.data.data.users);
       setBlogs(data.data.blogs);
+      setLetters(lettersData.data.letters);
     } catch (error) {
       console.log(error.response);
     }
@@ -32,7 +33,7 @@ const AppProvider = ({ children }) => {
   }, []);
   console.log(blogs);
   return (
-    <AppContext.Provider value={{ auth, users, blogs, setAuth }}>
+    <AppContext.Provider value={{ auth, users, blogs, letters, setAuth }}>
       {children}
     </AppContext.Provider>
   );

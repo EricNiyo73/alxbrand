@@ -3,11 +3,11 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../context/AppProvider";
-
 const Nav = () => {
   const [nav, setNav] = useState(true);
-  const { auth } = useContext(AppContext);
+  const { auth, users } = useContext(AppContext);
   console.log(auth);
+  console.log(users);
   return (
     <>
       <header>
@@ -70,7 +70,13 @@ const Nav = () => {
             {auth?.token ? (
               <>
                 <Link className="user" to="/dashboard">
-                  <span className="user">{auth.user.name.split(" ")[0]}</span>
+                  <span className="user">
+                    {auth && auth.user && auth.user.name
+                      ? auth.user.name.split(" ")[0]
+                      : "Welcome"}
+                  </span>
+
+                  {/* <span className="user">{auth.user.name.split(" ")[0]}</span> */}
                 </Link>
                 <Link className="user" to="/dashboard">
                   <button>Go to dashboard</button>

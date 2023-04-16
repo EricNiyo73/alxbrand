@@ -28,7 +28,13 @@ const SharedDashboard = () => {
         </div>
         <div className="logout">
           <div className="user_logout">
-            <span className="user">{auth.user.name.split(" ")[0]}</span>
+            <span className="user">
+              {auth && auth.user && auth.user.name
+                ? auth.user.name.split(" ")[0]
+                : "Welcome"}
+            </span>
+
+            {/* <span className="user">{auth.user.name.split(" ")[0]}</span> */}
           </div>
           <div className="">
             <span

@@ -3,9 +3,11 @@ import { Bar, Line } from "react-chartjs-2";
 // import { Chart as ChartJS } from "chart.js/auto";
 import { AppContext } from "../../context/AppProvider";
 import { motion } from "framer-motion";
+import { Chart, registerables } from "chart.js";
+Chart.register(...registerables);
 
 const Analytics = () => {
-  const { users, blogs } = useContext(AppContext);
+  const { users, blogs, letters } = useContext(AppContext);
 
   const allData = [
     {
@@ -60,7 +62,7 @@ const Analytics = () => {
       </div>
       <div className="main_dashboard">
         <div>
-          <span className="number">{users.length}</span>
+          <span className="number">{users?.length}</span>
           <span>All users</span>
         </div>
         <div>
@@ -68,7 +70,7 @@ const Analytics = () => {
           <span>All blogs</span>
         </div>
         <div>
-          <span className="number">13</span>
+          <span className="number">{letters?.length}</span>
           <span>New letters</span>
         </div>
         {/* <div>

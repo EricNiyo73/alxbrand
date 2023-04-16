@@ -1,7 +1,59 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { Report } from "notiflix/build/notiflix-report-aio";
+import { useContext } from "react";
+import { AppContext } from "../context/AppProvider";
+import { useState } from "react";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "../axios/axios";
 import { BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
-
+const schema = yup.object().shape({
+  email: yup.mixed().test("required", "Choose an Image for blog", (value) => {
+    return value && value.length;
+  }),
+  email: yup.string().required(),
+});
 const Footer = () => {
+  const { auth } = useContext(AppContext);
+  const [error, setError] = useState("");
+  const [email, setemail] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+  const onSubmit = async ({ email }) => {
+    if (!email) {
+      setError("Description is required");
+      return;
+    } else {
+      setError("");
+    }
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+      await axios.post("/letter", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${auth?.token}`,
+        },
+      });
+      Report.success("You made it!", "Thank you for subscribin to us ", "Ok", {
+        timeout: 2000,
+      });
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 3000);
+      reset();
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <footer>
       <div>
@@ -17,8 +69,13 @@ const Footer = () => {
       <div>
         <h1>Newsletter</h1>
         <p>Stay update with our latest blogs</p>
-        <form action="">
-          <input type="text" placeholder="Enter email here...." />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            type="text"
+            placeholder="Enter email here...."
+            {...register("email")}
+          />
+          <span className="error">{errors?.title?.message}</span>
           <button>send</button>
         </form>
       </div>
