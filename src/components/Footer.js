@@ -67,8 +67,8 @@ const Footer = () => {
         </p>
       </div>
       <div>
-        <h1>Newsletter</h1>
-        <p>Stay update with our latest blogs</p>
+        <h1>Subscribe to us</h1>
+        <p>And Stay update with our latest Tech stories</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"

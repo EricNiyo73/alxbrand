@@ -8,7 +8,7 @@ const Ai = () => {
 
   return (
     <div className="ai single">
-      <h1>Artifial intelligence /</h1>
+      <h1>Artificial intelligence /</h1>
       <div className="content">
         <div className="allai">
           {blogs?.map((item, index) => {

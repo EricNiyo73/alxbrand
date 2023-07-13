@@ -7,9 +7,9 @@ const SingleList = () => {
   const { blogs } = useContext(AppContext);
   return (
     <div className="full_category">
-      <h4 className="category">Artificial intelligence</h4>
+      <h4 className="category">blogs</h4>
       {blogs.map((item, index) => {
-        if (index < 3) {
+        if (index < 6) {
           return <SingleCard key={index} data={item} />;
         }
       })}

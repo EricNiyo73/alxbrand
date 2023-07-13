@@ -1,6 +1,6 @@
 import React from "react";
 import SingleList from "../components/SingleList";
-import Slider from "../components/Slider";
+// import Slider from "../components/Slider";
 const Home = () => {
   return (
     <>
@@ -9,16 +9,16 @@ const Home = () => {
           <span>Eric</span>Tech
         </h1>
         <p>
-          We are dedicated to covering the latest developments, news, and
-          opinions in the field of technology. we provides insights into the
-          latest technological trends, gadgets, and software, as well as
-          offering tips and tutorials on how to get the most out of these
-          products.
+          Stay ahead in the dynamic world of technology with our informative and
+          insightful articles. Explore a wealth of thoughtfully crafted content
+          that empowers you with valuable insights, practical tips, and expert
+          perspectives. Join our community of tech enthusiasts and fuel your
+          passion for all things tech.
         </p>
       </main>
-      <Slider />
+
       <div className="all">
-        {[1, 2, 3, 4].map((item, index) => {
+        {[1].map((item, index) => {
           return <SingleList key={index} />;
         })}
       </div>

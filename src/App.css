@@ -338,11 +338,11 @@ footer ul a:hover {
 
 .all .full_category .card {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 40% 60%;
 }
 
 .all .full_category .card .blog_text {
-  padding: 0.4rem;
+  padding: 0.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
