@@ -3,7 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
 import { AppContext } from "../context/AppProvider";
 
-const SharedDashboard = () => {
+const UserSharedDashboard = () => {
   const { auth } = useContext(AppContext);
   const [sidebar, setSidebar] = useState(false);
   return (
@@ -50,18 +50,10 @@ const SharedDashboard = () => {
         </div>
       </div>
       <div className={`sidebar ${sidebar ? "sidebar_active" : "sidebar_not"}`}>
-        <h4>Dashboard</h4>
+        <h4>Manage Your Blogs</h4>
         <ul>
           <li>
-            <Link to="/dashboard" className="link">
-              <span>Analytics</span>
-            </Link>
-          </li>
-        </ul>
-        <h4>Manage blogs</h4>
-        <ul>
-          <li>
-            <Link className="link" to="blogs">
+            <Link className="link" to="userblogs">
               {/* <span>
                 <FaBloggerB />
               </span> */}
@@ -77,32 +69,6 @@ const SharedDashboard = () => {
             </Link>
           </li>
         </ul>
-        <h4>Manage Emails</h4>
-        <ul>
-          <li>
-            <Link className="link" to="letters">
-              <span>News Letter email</span>
-            </Link>
-          </li>
-        </ul>
-        <h4>Manage users</h4>
-        <ul>
-          <li>
-            <Link className="link" to="users">
-              <span>All users</span>
-            </Link>
-          </li>
-          {/* <li>
-            <Link className="link" to="/login">
-              <span>Login</span>
-            </Link>
-          </li>
-          <li>
-            <Link className="link" to="/register">
-              <span>Register</span>
-            </Link>
-          </li> */}
-        </ul>
       </div>
       <div className="out">
         <Outlet />
@@ -111,4 +77,4 @@ const SharedDashboard = () => {
   );
 };
 
-export default SharedDashboard;
+export default UserSharedDashboard;

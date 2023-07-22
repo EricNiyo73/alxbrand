@@ -78,7 +78,8 @@ const Nav = () => {
 
                   {/* <span className="user">{auth.user.name.split(" ")[0]}</span> */}
                 </Link>
-                <Link className="user" to="/dashboard">
+                <Link className="user" to="/userdashboard">
+                  <span className="user">{}</span>
                   <button>Go to dashboard</button>
                 </Link>
               </>

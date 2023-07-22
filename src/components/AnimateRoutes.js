@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import SharedDashboard from "./SharedDashboard";
+import UserSharedDashboard from "./SharedUserDashboard";
 import DashboardView from "../pages/DashboardView";
 import SharedComponent from "./SharedComponent";
 import Ai from "../pages/Ai";
@@ -18,9 +19,11 @@ import DevOps from "../pages/DevOps";
 import BlockChain from "../pages/BlockChain";
 import Analytics from "../pages/dashboard/Analytics";
 import Blogs from "../pages/dashboard/Blogs";
+import UserBlogs from "../pages/userdashboard/Blogs";
+import Welcome from "../pages/userdashboard/WelcomeDash";
+
 import Create from "../pages/dashboard/Create";
 import Users from "../pages/dashboard/Users";
-import Queries from "../pages/dashboard/Queries";
 import News from "../pages/dashboard/News";
 import { AnimatePresence } from "framer-motion";
 import AnimatedPage from "./AnimatedPage";
@@ -92,6 +95,18 @@ const AnimateRoutes = () => {
           <Route path="*" element={<Home />}></Route>
         </Route>
         <Route
+          path="userdashboard"
+          element={
+            <ProtectRoute>
+              <UserSharedDashboard />
+            </ProtectRoute>
+          }
+        >
+          <Route index path="" element={<Welcome />} />
+          <Route path="userblogs" element={<UserBlogs />} />
+          <Route path="create" element={<Create />} />
+        </Route>
+        <Route
           path="dashboard"
           element={
             <ProtectRoute>
@@ -103,7 +118,6 @@ const AnimateRoutes = () => {
           <Route path="blogs" element={<Blogs />} />
           <Route path="create" element={<Create />} />
           <Route path="users" element={<Users />} />
-          <Route path="queries" element={<Queries />} />
           <Route path="letters" element={<News />} />
           <Route path="*" element={<DashboardView />} />
         </Route>{" "}
