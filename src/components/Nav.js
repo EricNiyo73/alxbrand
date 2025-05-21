@@ -15,7 +15,7 @@ const Nav = () => {
           <div>
             <Link className="link" to="/">
               <h1 className="logo">
-                <span>Eric</span>Tech
+                <span>Blog</span>Post
               </h1>
             </Link>
           </div>

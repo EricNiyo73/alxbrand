@@ -31,7 +31,13 @@ const SingleCard = ({ data }) => {
               </Link>
             </h3>
           </div>
-          <div className="description">{description.slice(0, 100) + "..."}</div>
+          <div
+            className="description"
+            dangerouslySetInnerHTML={{
+              __html: description.slice(0, 100) + "...",
+            }}
+          ></div>
+          {/* <h6>{description.slice(0, 100) + "..."}</h6> */}
         </div>
       </div>
     </div>

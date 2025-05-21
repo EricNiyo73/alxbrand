@@ -4,7 +4,7 @@ const Welcome = () => {
     <>
       <main className="home">
         <h1>
-          <span>Eric</span>Tech
+          <span>Blog</span>Post
         </h1>
         <p>Welcome to Your Dashboard</p>
       </main>

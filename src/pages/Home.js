@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <main className="home">
         <h1>
-          <span>Eric</span>Tech
+          <span>Blog</span>Post
         </h1>
         <p>
           Stay ahead in the dynamic world of technology with our informative and

@@ -17,7 +17,7 @@ const Slider = () => {
             </span>
             <span>
               <MdDateRange />
-              <span>January 12 2023</span>
+              <span>May 21 2025</span>
             </span>
             <span>
               <AiOutlineComment />

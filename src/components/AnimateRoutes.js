@@ -18,10 +18,9 @@ import Cloud from "../pages/Cloud";
 import DevOps from "../pages/DevOps";
 import BlockChain from "../pages/BlockChain";
 import Analytics from "../pages/dashboard/Analytics";
-import Blogs from "../pages/dashboard/Blogs";
+// import Blogs from "../pages/dashboard/Blogs";
 import UserBlogs from "../pages/userdashboard/Blogs";
 import Welcome from "../pages/userdashboard/WelcomeDash";
-
 import Create from "../pages/dashboard/Create";
 import Users from "../pages/dashboard/Users";
 import News from "../pages/dashboard/News";
@@ -115,7 +114,7 @@ const AnimateRoutes = () => {
           }
         >
           <Route index path="" element={<Analytics />} />
-          <Route path="blogs" element={<Blogs />} />
+          {/* <Route path="blogs" element={<Blogs />} /> */}
           <Route path="create" element={<Create />} />
           <Route path="users" element={<Users />} />
           <Route path="letters" element={<News />} />
