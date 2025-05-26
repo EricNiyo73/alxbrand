@@ -52,7 +52,7 @@ const AnimateRoutes = () => {
             }
           ></Route>
           <Route
-            path="ai/:aiId"
+            path="blog/:blogId"
             element={
               <AnimatedPage>
                 <SingleBlog />
@@ -64,7 +64,7 @@ const AnimateRoutes = () => {
           <Route path="/devops" element={<DevOps />}></Route>
           <Route path="devops/:devopsId" element={<SingleBlog />}></Route>
           <Route path="/blockchain" element={<BlockChain />}></Route>
-          <Route path="blockchain/:aiId" element={<SingleBlog />}></Route>
+          <Route path="blockchain/:blogId" element={<SingleBlog />}></Route>
           <Route
             path="login"
             element={

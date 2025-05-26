@@ -3,7 +3,7 @@ import Card from "../components/Card";
 import Side from "../components/Side";
 import { AppContext } from "../context/AppProvider";
 
-const Ai = () => {
+const Blog = () => {
   const { blogs } = useContext(AppContext);
 
   return (
@@ -21,4 +21,4 @@ const Ai = () => {
   );
 };
 
-export default Ai;
+export default Blog;

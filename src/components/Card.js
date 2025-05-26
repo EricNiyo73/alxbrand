@@ -8,7 +8,7 @@ const Card = ({ item }) => {
   const { title, _id, comments, image, description, createdAt } = item;
   return (
     <div className="card">
-      <img src={image||""} alt={title} />
+      <img src={image || ""} alt={title} />
       <div>
         <div className="blog_text">
           <div className="content">
@@ -26,7 +26,7 @@ const Card = ({ item }) => {
             </span>
           </div>
           <div className="title">
-            <Link to={`/ai/${_id}`}>
+            <Link to={`/blog/${_id}`}>
               <h3>{title}</h3>
             </Link>
           </div>
@@ -38,7 +38,7 @@ const Card = ({ item }) => {
             )}
           </div>
         </div>
-        <Link to={`/ai/${_id}`}>
+        <Link to={`/blog/${_id}`}>
           <button className="btn">Read more...</button>
         </Link>
       </div>

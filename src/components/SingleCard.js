@@ -26,7 +26,7 @@ const SingleCard = ({ data }) => {
           </div>
           <div>
             <h3 className="title">
-              <Link className="title" to={`/ai/${_id}`}>
+              <Link className="title" to={`/blog/${_id}`}>
                 {title}
               </Link>
             </h3>

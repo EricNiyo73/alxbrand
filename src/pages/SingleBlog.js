@@ -13,9 +13,9 @@ const schema = yup.object().shape({
   comment: yup.string().min(3).required(),
 });
 const SingleBlog = (props) => {
-  const { aiId } = useParams();
+  const { blogId } = useParams();
   const { blogs, auth } = useContext(AppContext);
-  const filtered = blogs.find((item) => item._id === aiId);
+  const filtered = blogs.find((item) => item._id === blogId);
   console.log(filtered);
   const {
     register,
@@ -29,7 +29,7 @@ const SingleBlog = (props) => {
   const onSubmit = async (data) => {
     try {
       if (auth?.token) {
-        await axios.post(`/comment/${aiId}`, data, {
+        await axios.post(`/comment/${blogId}`, data, {
           headers: {
             Authorization: `Bearer ${auth?.token}`,
           },
