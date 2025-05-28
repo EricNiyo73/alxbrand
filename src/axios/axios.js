@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "https://alxbackend-1.onrender.com",
+  baseURL: "https://alxbackend-1.onrender.com/",
 });
 
 // export default axios.create({
